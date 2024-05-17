@@ -7,6 +7,7 @@ import { cn } from '@/lib/classnames';
 
 type TableProps = {
   className?: string;
+  classWrapper?: string;
   nextLinkProps?: Omit<LinkProps, 'href'>;
 } & React.HTMLAttributes<HTMLTableElement>;
 
@@ -17,9 +18,10 @@ type TableComponentProps<T> = {
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
   ({
     className,
+    classWrapper,
     ...props
   }, ref) => (
-    <div className="relative w-full whitespace-nowrap overflow-auto scroll-custom">
+    <div className={cn('relative w-full whitespace-nowrap overflow-x-auto scroll-customcn', classWrapper)}>
       <table
         ref={ref}
         className={cn(
@@ -39,7 +41,7 @@ const TableHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <thead
     ref={ref}
-    className={cn('[&_tr]:border-b [&_tr]:text-black/50 [&_tr]:py-6', className)}
+    className={cn('[&_tr]:border-b [&_tr]:text-black/50 [&_tr]:py-6 sticky -top-[1px] z-[7] bg-white shadow-sm', className)}
     {...props}
   />
 ));

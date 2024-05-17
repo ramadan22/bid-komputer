@@ -11,8 +11,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'border',
+        default: 'border',
+        icon: 'border-none',
       },
       size: {
         default: 'h-9 px-4 py-2',

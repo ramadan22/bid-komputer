@@ -1,14 +1,19 @@
 import { AxiosError } from 'axios';
 
-import { ResponseApiTypes } from '@/types/responseApi';
+import { ResponseApiTypes } from '@/types/serviceApi';
 
-export const ErrorConvertToMessage = (paramError: unknown) => {
+const ErrorConvertToMessage = (paramError: unknown) => {
   const error = paramError as AxiosError<ResponseApiTypes>;
 
   const message = error.response?.data.message
+    || (error.response?.data as { error?: string })?.error
+    || `${error.name}: ${error?.message}`
     || `Error ${error.response?.status}: ${error.response?.statusText}`
-    || error?.message
     || 'Something wrong!';
 
   return message;
+};
+
+export {
+  ErrorConvertToMessage
 };

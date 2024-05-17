@@ -1,5 +1,5 @@
 import AxiosInstance from '@/lib/axios';
-import { ResponseApiTypes } from '@/types/responseApi';
+import { ResponseApiTypes } from '@/types/serviceApi';
 import { ResponseUsersProfileTypes } from './types';
 
 const UserService = () => {

@@ -20,3 +20,8 @@ export const rowsPerPage = [
     value: 100,
   }
 ];
+
+export const defaultParams = {
+  page: 1,
+  size: 10,
+};
