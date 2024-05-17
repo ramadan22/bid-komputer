@@ -1,4 +1,4 @@
-export const HomePage = () => (
+const HomePage = () => (
   <div>Home</div>
 );
 

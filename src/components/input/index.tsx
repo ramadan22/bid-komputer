@@ -35,7 +35,7 @@ const Input = React.forwardRef<HTMLInputElement, SearchInputProps>(
         )}
         {...props}
       />
-      {iconType && <Icon type={iconType} className={cn(classIcon)} />}
+      {iconType && <Icon type={iconType} className={cn('text-xs', classIcon)} />}
     </div>
   ),
 );

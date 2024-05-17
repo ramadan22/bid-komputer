@@ -88,7 +88,7 @@ const Pagination = ({
             size="sm"
             // variant="outline"
             onClick={() => page < totalPageCount && setPage((pagePayload) => pagePayload + 1)}
-            disabled={page === totalPageCount}
+            disabled={totalPageCount === 0 || (totalPageCount !== 0 && page === totalPageCount)}
           >
             next
           </Button>
@@ -96,7 +96,7 @@ const Pagination = ({
             size="sm"
             // variant="outline"
             onClick={() => page < totalPageCount && setPage(totalPageCount)}
-            disabled={page === totalPageCount}
+            disabled={totalPageCount === 0 || (totalPageCount !== 0 && page === totalPageCount)}
           >
             last
           </Button>

@@ -86,10 +86,10 @@ export const authOptions: NextAuthOptions = {
 
       return session;
     },
-    async redirect({ url, baseUrl }: { url: string, baseUrl: string }) {
-      return url.startsWith(baseUrl)
-        ? Promise.resolve(url)
-        : Promise.resolve(baseUrl);
-    },
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith('/')) return `${baseUrl}${url}`;
+      if (new URL(url).origin === baseUrl) return url;
+      return baseUrl;
+    }
   },
 };

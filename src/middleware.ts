@@ -8,7 +8,7 @@ export default withAuth(
 
     const isAuth = !!userAuth;
 
-    const isAuthPage = req.nextUrl.pathname === '/login';
+    const isAuthPage = req.nextUrl.pathname === '/dashboard/login';
 
     if (!isAuth && !isAuthPage) {
       let from = req.nextUrl.pathname;
@@ -18,7 +18,7 @@ export default withAuth(
       }
 
       return NextResponse.redirect(
-        new URL(`/login?from=${encodeURIComponent(from)}`, req.url),
+        new URL(`/dashboard/login?from=${encodeURIComponent(from)}`, req.url),
       );
     }
 
@@ -26,7 +26,14 @@ export default withAuth(
       return NextResponse.redirect(new URL('/dashboard', req.url));
     }
 
-    return null;
+    const newHeaders = new Headers(req.headers);
+    newHeaders.set('x-pathname', req.nextUrl.pathname);
+
+    return NextResponse.next({
+      request: {
+        headers: newHeaders
+      },
+    });
   },
   {
     callbacks: {
@@ -42,7 +49,9 @@ export default withAuth(
 
 export const config = {
   matcher: [
+    // '/dashboard/((?!api|_next/static|_next/image|favicon.ico).*)',
+    // '/dashboard/products',
     '/dashboard/:path*',
-    '/login',
+    '/dashboard/login',
   ],
 };

@@ -1,5 +1,5 @@
 import AxiosInstance from '@/lib/axios';
-import { ResponseApiTypes } from '@/types/responseApi';
+import { ResponseApiTypes } from '@/types/serviceApi';
 import { LoginResponseTypes, PayloadsTypes } from './authenticationTypes';
 
 const AuthenticationService = () => {
