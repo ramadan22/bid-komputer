@@ -30,7 +30,7 @@ export const sidebarMenu = [
         slug: 'OTHER_ACCOUNT',
         text: 'Account',
         icon: <RiAccountCircleFill />,
-        href: '/dashboard',
+        href: '/dashboard/account',
       }
     ]
   },
