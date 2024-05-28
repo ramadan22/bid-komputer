@@ -4,6 +4,8 @@ declare module '*.png';
 
 declare module '*.svg';
 
+declare module 'slate-html-serializer';
+
 export type CamelCaseKey<S extends string> = S extends `${infer F}_${infer R}`
   ? `${Lowercase<F>}${Capitalize<CamelCaseKey<R>>}`
   : Lowercase<S>;

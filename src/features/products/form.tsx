@@ -10,6 +10,7 @@ import Input from '@/components/input';
 import Label from '@/components/label';
 import { formatRupiah } from '@/helpers/formatter';
 import { numericInitiate, removeNonDigits } from '@/helpers/inputHelper';
+import RichEditor from '@/lib/slate';
 import UseFormData from './hooks/formData';
 import { FormDataTypes, FormPropsTypes } from './types';
 
@@ -48,7 +49,10 @@ const FormFeature = ({
               onChange={(event) => setForm({ ...form, name: event?.target.value })}
             />
           </div>
-          <div className="flex flex-col gap-y-2.5 mt-5">
+          <div className="mt-5">
+            <RichEditor />
+          </div>
+          <div className="hidden flex-col gap-y-2.5 mt-5">
             <Label>Description</Label>
             <Input
               value={form.description}
@@ -60,7 +64,6 @@ const FormFeature = ({
           <div className="flex flex-col gap-y-2.5 mt-5">
             <Label>Stock</Label>
             <Input
-              // type="number"
               value={form.stock || 0}
               placeholder="Enter Product Stock"
               className="h-12"
@@ -77,7 +80,6 @@ const FormFeature = ({
             <div className="flex gap-x-2 items-center border shadow-sm rounded pl-3 pr-2">
               <Label className="text-base">Rp</Label>
               <Input
-                // type="number"
                 value={formatRupiah(Number(form.price)) || 0}
                 placeholder="Enter Product Price"
                 className="h-12 flex-1 border-0 shadow-none rounded-none p-0"

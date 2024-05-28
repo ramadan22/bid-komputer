@@ -27,7 +27,7 @@ const SidebarUI = () => {
                   <Link
                     href={menu.href}
                     className={cn(
-                      menu.href.includes(pathname) && 'bg-[#e4e7f4] !text-[#5a6acf]',
+                      (menu.href === pathname && 'bg-[#e4e7f4] !text-[#5a6acf]'),
                     )}
                   >
                     {menu.icon}

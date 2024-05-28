@@ -21,27 +21,25 @@ export const RootLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => (
-  <html lang="en">
-    <body>
-      <NextAuthProvider>
-        <ReactQueryProvider>
-          <ToastifyProvider>
-            <div className="flex flex-wrap">
-              <div className="basis-1/6 grow h-screen">
-                <SidebarUI />
-              </div>
-              <div className="basis-5/6 grow flex flex-col">
-                <NavbarUI />
-                <div className="flex-1 relative">
-                  {children}
-                </div>
+  <section>
+    <NextAuthProvider>
+      <ReactQueryProvider>
+        <ToastifyProvider>
+          <div className="flex flex-wrap">
+            <div className="basis-1/6 grow h-screen">
+              <SidebarUI />
+            </div>
+            <div className="basis-5/6 grow flex flex-col">
+              <NavbarUI />
+              <div className="flex-1 relative">
+                {children}
               </div>
             </div>
-          </ToastifyProvider>
-        </ReactQueryProvider>
-      </NextAuthProvider>
-    </body>
-  </html>
+          </div>
+        </ToastifyProvider>
+      </ReactQueryProvider>
+    </NextAuthProvider>
+  </section>
 );
 
 export default RootLayout;
