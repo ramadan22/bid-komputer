@@ -37,6 +37,7 @@
     ],
     "import/prefer-default-export": "off",
     "react/jsx-key": "off",
+    "linebreak-style": ["error", "windows"],
     "react/require-default-props": [
       "off",
       {
