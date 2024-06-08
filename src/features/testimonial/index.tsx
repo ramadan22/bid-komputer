@@ -44,21 +44,23 @@ const index = () => {
       {testimonial.map((item) => (
         <SwiperSlide key={item.id}>
           <div className="flex justify-center items-center h-full">
-            <div className="w-2/3 grid grid-cols-3">
-              <div className="col-span-1 flex justify-center">
+            <div className="w-full md:w-2/3 flex flex-col md:flex-row gap-6 p-4 md:p-0">
+              <div className="flex justify-center md:justify-start">
                 <img
                   src={item.image}
                   alt="user"
-                  className="w-36 rounded-full"
+                  className="w-24 md:w-36 h-16 md:h-24 rounded-full object-cover"
                 />
               </div>
-              <div className="col-span-2">
+              <div className="flex flex-col justify-center">
                 <div className="mb-5">
                   <FontAwesomeIcon icon={faQuoteLeft} className="mr-2" />
                   {item.content}
                   <FontAwesomeIcon icon={faQuoteRight} className="ml-2" />
                 </div>
-                {item.testimonialName}
+                <div className="mt-2 font-semibold">
+                  {item.testimonialName}
+                </div>
               </div>
             </div>
           </div>

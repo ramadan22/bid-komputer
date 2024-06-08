@@ -15,12 +15,11 @@ const HomePage = () => (
 
     <section className="mb-10">
       <BannersTopFeature />
-      {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
     </section>
     <div className="flex flex-col gap-y-48 mb-48">
       <section className="container">
         <h1 className="text-center text-4xl mb-32">Our Services</h1>
-        <div className="grid grid-cols-3 items-center justify-center gap-x-10 gap-y-32">
+        <div className="grid grid-cols-1 px-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center justify-center gap-x-10 gap-y-32">
           {[1, 2, 3, 4, 5, 6].map((item, idx) => (
             <div key={idx} className="border relative p-10 pt-20 shadow-sm rounded bg-[#f4f4f4] text-[#808291]">
               <div className="absolute top-0 inset-x-0 mx-auto -mt-16 bg-[#5b67ba] text-white flex items-center justify-center w-32 h-32 rounded-full">
@@ -37,10 +36,12 @@ const HomePage = () => (
         </div>
       </section>
       <section className="container">
-        <div className="text-4xl text-center font-bold mb-24">
+        <div className="text-4xl text-center font-bold mb-24 ">
           Product List
         </div>
-        <ProsuctListFeature />
+        <div className="px-6">
+          <ProsuctListFeature />
+        </div>
       </section>
       <section className="bg-[#f26522] text-white py-20 ">
         <div className="container">

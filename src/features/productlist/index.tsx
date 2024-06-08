@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -7,81 +8,43 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import CardProduct from '@/ui/cardProduct';
+import products from './data';
 
 const ProductListFeature = () => {
-  const products = [
-    {
-      id: 1,
-      image: 'https://cdn.topsellbelanja.com/wp-content/uploads/2023/08/Laptop-Macbook-Apple-1-c.webp',
-      title: 'lorem ipsum is doler amet ipdeolam hujam lorem ipsum is doler amet ipdeolam hujam',
-      price: 'Rp. 30,000',
-      diskon: {
-        value: '30',
-        item: '%',
-        diskonPrice: 'Rp. 21,000'
-      }
-    },
-    {
-      id: 2,
-      image: 'https://cdn.topsellbelanja.com/wp-content/uploads/2023/08/Laptop-Macbook-Apple-2-c.webp',
-      title: 'product2',
-      price: 'Rp. 40,000',
-      diskon: {
-        value: '20',
-        item: '%',
-        diskonPrice: 'Rp. 32,000'
-      }
-    },
-    {
-      id: 3,
-      image: 'https://cdn.topsellbelanja.com/wp-content/uploads/2023/08/Laptop-Macbook-Apple-1-c.webp',
-      title: 'product3',
-      price: 'Rp. 50,000',
-      diskon: null
-    },
-    {
-      id: 4,
-      image: 'https://cdn.topsellbelanja.com/wp-content/uploads/2023/08/Laptop-Macbook-Apple-2-c.webp',
-      title: 'product4',
-      price: 'Rp. 60,000',
-      diskon: {
-        value: '30000',
-        item: 'Rp',
-        diskonPrice: 'Rp. 30,000'
-      }
-    },
-    {
-      id: 5,
-      image: 'https://cdn.topsellbelanja.com/wp-content/uploads/2023/08/Laptop-Macbook-Apple-1-c.webp',
-      title: 'product5',
-      price: 'Rp. 70,000',
-      diskon: null
-    },
-    {
-      id: 6,
-      image: 'https://cdn.topsellbelanja.com/wp-content/uploads/2023/08/Laptop-Macbook-Apple-2-c.webp',
-      title: 'product6',
-      price: 'Rp. 80,000',
-      diskon: {
-        value: '30000',
-        item: 'Rp',
-        diskonPrice: 'Rp. 50,000'
-      }
-    },
-    {
-      id: 7,
-      image: 'https://cdn.topsellbelanja.com/wp-content/uploads/2023/08/Laptop-Macbook-Apple-1-c.webp',
-      title: 'product7',
-      price: 'Rp. 90,000',
-      diskon: null
-    }
-  ];
+  const [showNavigation, setShowNavigation] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setShowNavigation(event.matches);
+    };
+
+    setShowNavigation(mediaQuery.matches);
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, []);
 
   return (
     <Swiper
-      slidesPerView={4}
-      spaceBetween={30}
-      navigation
+      breakpoints={{
+        360: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      }}
+      navigation={showNavigation}
       loop
       pagination={{
         clickable: true,
@@ -90,7 +53,7 @@ const ProductListFeature = () => {
       className="mySwiper"
     >
       {products.map((product) => (
-        <SwiperSlide key={product.id} className="py-10 h-full">
+        <SwiperSlide key={product.id} className="py-10  h-full">
           <CardProduct
             title={product.title}
             price={product.price}

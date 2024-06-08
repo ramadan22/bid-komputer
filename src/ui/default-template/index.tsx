@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import { FaFacebookSquare, FaPhoneAlt, FaRegClock } from 'react-icons/fa';
+import {
+  FaFacebookSquare, FaPhoneAlt, FaRegClock
+} from 'react-icons/fa';
 
 import Icon from '@/components/icon';
 import Label from '@/components/label';
 import FooterFeature from '@/features/footerFeature';
+import Styles from './style.module.scss';
 
 const DefaultTemplateUi = ({ children }: {children:React.ReactNode}) => (
   <>
@@ -16,12 +19,12 @@ const DefaultTemplateUi = ({ children }: {children:React.ReactNode}) => (
           <Link href="/"><Icon type="Tokopedia" /></Link>
         </div>
       </div>
-      <div className="flex justify-between items-center container">
+      <div className="flex justify-between items-center container py-2 px-2">
         <div className="flex items-center gap-x-2">
-          <div className="w-20 h-20 rounded-full bg-[#5b67ba] flex justify-center items-center text-white text-6xl">B</div>
-          <Label className="uppercase text-[#5b67ba] text-3xl">Bid Komputer</Label>
+          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#5b67ba] flex justify-center items-center text-white text-2xl lg:text-6xl">B</div>
+          <Label className="uppercase text-[#5b67ba] text-lg lg:text-3xl">Bid Komputer</Label>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="hidden lg:flex flex-col items-end">
           <div className="flex gap-x-10 mt-5 mb-10">
             <div className="flex items-center gap-x-3 text-[#6a6a6a]">
               <FaPhoneAlt size={28} />
@@ -50,6 +53,14 @@ const DefaultTemplateUi = ({ children }: {children:React.ReactNode}) => (
               </li>
             </ul>
           </div>
+        </div>
+        <div className="lg:hidden">
+          <label className={Styles.bar} htmlFor="check">
+            <input type="checkbox" id="check" />
+            <span className="top" />
+            <span className="middle" />
+            <span className="bottom" />
+          </label>
         </div>
       </div>
     </nav>
