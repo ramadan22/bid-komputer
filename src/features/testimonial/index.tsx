@@ -1,36 +1,20 @@
 'use client';
 
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa6';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Styles from './style.module.scss';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 
-const index = () => {
-  const testimonial = [
-    {
-      id: 1,
-      testimonialName: 'haris ramadhan',
-      image: 'https://awsimages.detik.net.id/community/media/visual/2018/03/03/39f24229-6f26-4a17-aa92-44c3bd3dae9e_43.jpeg?w=600&q=90',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem a voluptatum repellat.'
-    },
-    {
-      id: 2,
-      testimonialName: 'maulana yusuf',
-      image: 'https://awsimages.detik.net.id/community/media/visual/2018/03/03/39f24229-6f26-4a17-aa92-44c3bd3dae9e_43.jpeg?w=600&q=90',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem a voluptatum repellat.'
-    },
-    {
-      id: 2,
-      testimonialName: 'ainul aji',
-      image: 'https://awsimages.detik.net.id/community/media/visual/2018/03/03/39f24229-6f26-4a17-aa92-44c3bd3dae9e_43.jpeg?w=600&q=90',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem a voluptatum repellat.'
-    },
-  ];
-  return (
+const TestimonialFeature = () => (
+  <>
+    <h1 className="text-4xl text-center font-bold mb-24">
+      Product List
+    </h1>
     <Swiper
       modules={[Autoplay, Pagination]}
       slidesPerView={1}
@@ -39,27 +23,28 @@ const index = () => {
         disableOnInteraction: false,
       }}
       loop
-      className="mySwiper"
     >
-      {testimonial.map((item) => (
-        <SwiperSlide key={item.id}>
-          <div className="flex justify-center items-center h-full">
-            <div className="w-full md:w-2/3 flex flex-col md:flex-row gap-6 p-4 md:p-0">
-              <div className="flex justify-center md:justify-start">
-                <img
-                  src={item.image}
+      {[1, 2, 3].map((item) => (
+        <SwiperSlide key={item}>
+          <div className={Styles.contentSlider}>
+            <div>
+              <div>
+                <Image
+                  fill
                   alt="user"
-                  className="w-24 md:w-36 h-16 md:h-24 rounded-full object-cover"
+                  sizes="150px"
+                  src="https://awsimages.detik.net.id/community/media/visual/2018/03/03/39f24229-6f26-4a17-aa92-44c3bd3dae9e_43.jpeg?w=600&q=90"
                 />
               </div>
-              <div className="flex flex-col justify-center">
-                <div className="mb-5">
-                  <FontAwesomeIcon icon={faQuoteLeft} className="mr-2" />
-                  {item.content}
-                  <FontAwesomeIcon icon={faQuoteRight} className="ml-2" />
+              <div>
+                <div>
+                  <FaQuoteLeft className="mr-2" />
+                  Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Dolorem a voluptatum repellat.
+                  <FaQuoteRight className="ml-2" />
                 </div>
-                <div className="mt-2 font-semibold">
-                  {item.testimonialName}
+                <div>
+                  Muhammad Maulana Yusuf
                 </div>
               </div>
             </div>
@@ -67,7 +52,7 @@ const index = () => {
         </SwiperSlide>
       ))}
     </Swiper>
-  );
-};
+  </>
+);
 
-export default index;
+export default TestimonialFeature;

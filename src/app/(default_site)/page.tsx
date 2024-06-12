@@ -1,62 +1,33 @@
 'use client';
 
-/* eslint-disable react/no-array-index-key */
-
-import { MdComputer } from 'react-icons/md';
-
-import BannersTopFeature from '@/features/bannersTop';
-
-import ProsuctListFeature from '@/features/productlist';
+import BannersTopFeature from '@/features/banners-top';
+import OutServicesFeature from '@/features/our-services';
+import ProsuctListFeature from '@/features/product-list';
 import TestimonialFeature from '@/features/testimonial';
 import DefaultTemplateUi from '@/ui/default-template';
 
 const HomePage = () => (
   <DefaultTemplateUi>
-
     <section className="mb-10">
       <BannersTopFeature />
     </section>
     <div className="flex flex-col gap-y-48 mb-48">
       <section className="container">
-        <h1 className="text-center text-4xl mb-32">Our Services</h1>
-        <div className="grid grid-cols-1 px-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center justify-center gap-x-10 gap-y-32">
-          {[1, 2, 3, 4, 5, 6].map((item, idx) => (
-            <div key={idx} className="border relative p-10 pt-20 shadow-sm rounded bg-[#f4f4f4] text-[#808291]">
-              <div className="absolute top-0 inset-x-0 mx-auto -mt-16 bg-[#5b67ba] text-white flex items-center justify-center w-32 h-32 rounded-full">
-                <MdComputer size={90} />
-              </div>
-              <h1 className="text-xl text-center font-bold mb-2">Desktop Service</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec ipsum dolor sit amet, consectetur ut erat nec leo
-                lobortis blandit.
-              </p>
-            </div>
-          ))}
-        </div>
+        <OutServicesFeature />
       </section>
       <section className="container">
-        <div className="text-4xl text-center font-bold mb-24 ">
-          Product List
-        </div>
-        <div className="px-6">
-          <ProsuctListFeature />
-        </div>
+        <ProsuctListFeature />
       </section>
-      <section className="bg-[#f26522] text-white py-20 ">
+      <section className="bg-[#f26522] text-white py-20">
         <div className="container">
           <h1 className="text-center text-4xl mb-5">We help you to grow your business</h1>
           <h2 className="text-center text-xl mb-32">We are here to acclerate your business and find a way</h2>
         </div>
       </section>
       <section className="container">
-        <div className="text-4xl text-center font-bold mb-24">
-          Testmonial
-        </div>
         <TestimonialFeature />
       </section>
     </div>
-
   </DefaultTemplateUi>
 );
 export default HomePage;

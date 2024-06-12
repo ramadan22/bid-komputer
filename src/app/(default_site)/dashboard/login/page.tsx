@@ -1,4 +1,4 @@
-import LoginFeature from '@/features/login';
+import LoginFeature from '@/features/dashboard/login';
 
 export const LoginPage = () => (
   <LoginFeature />

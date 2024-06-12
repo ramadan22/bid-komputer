@@ -5,10 +5,10 @@ import {
 
 import Icon from '@/components/icon';
 import Label from '@/components/label';
-import FooterFeature from '@/features/footerFeature';
+import FooterFeature from '@/features/footer';
 import Styles from './style.module.scss';
 
-const DefaultTemplateUi = ({ children }: {children:React.ReactNode}) => (
+const DefaultTemplateUi = ({ children }: { children:React.ReactNode}) => (
   <>
     <nav>
       <div className="bg-black text-white py-2.5">
@@ -55,12 +55,12 @@ const DefaultTemplateUi = ({ children }: {children:React.ReactNode}) => (
           </div>
         </div>
         <div className="lg:hidden">
-          <label className={Styles.bar} htmlFor="check">
+          <div className={Styles.bar}>
             <input type="checkbox" id="check" />
             <span className="top" />
             <span className="middle" />
             <span className="bottom" />
-          </label>
+          </div>
         </div>
       </div>
     </nav>

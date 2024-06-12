@@ -4,7 +4,7 @@ interface Diskon {
   diskonPrice: string;
 }
 
-export interface CardProductProps {
+export type CardProductProps = {
   title: string;
   price: string;
   image: string;
