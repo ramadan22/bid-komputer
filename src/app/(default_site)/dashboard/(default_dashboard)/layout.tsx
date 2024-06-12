@@ -4,8 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import NextAuthProvider from '@/lib/providers/nextAuthProvider';
 import ReactQueryProvider from '@/lib/providers/reactQueryProvider';
 import { ToastifyProvider } from '@/lib/providers/reactToastify';
-import NavbarUI from '@/ui/cms/navbar';
-import SidebarUI from '@/ui/cms/sidebar';
+import NavbarUI from '@/ui/dashboard/navbar';
+import SidebarUI from '@/ui/dashboard/sidebar';
 
 export const metadata: Metadata = {
   title: 'Dashboard',

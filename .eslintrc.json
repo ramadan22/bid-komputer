@@ -37,6 +37,7 @@
     ],
     "import/prefer-default-export": "off",
     "react/jsx-key": "off",
+    "linebreak-style": 0,
     "react/require-default-props": [
       "off",
       {
@@ -47,6 +48,7 @@
       "error",
       "never",
       {
+        "jpeg": "ignorePackages",
         "svg": "ignorePackages",
         "json": "ignorePackages",
         "type": "ignorePackages",

@@ -1,0 +1,22 @@
+.ourServices {
+  & > h1 {
+    @apply text-center text-4xl mb-32;
+  }
+
+  & > div {
+    @apply grid px-6 items-center justify-center gap-x-10 gap-y-32;
+    @apply grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3;
+
+    & > div {
+      @apply border relative p-10 pt-20 shadow-sm rounded bg-[#f4f4f4] text-[#808291];
+
+      & > div {
+        @apply absolute top-0 inset-x-0 mx-auto -mt-16 bg-[#5b67ba] text-white flex items-center justify-center w-32 h-32 rounded-full
+      }
+
+      & > h1 {
+        @apply text-xl text-center font-bold mb-2;
+      }
+    }
+  }
+}

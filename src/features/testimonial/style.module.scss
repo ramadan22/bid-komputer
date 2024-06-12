@@ -1,0 +1,35 @@
+.contentSlider {
+  @apply flex justify-center items-center h-full;
+
+  &>div {
+    @apply w-full md:w-2/3 flex flex-col md:flex-row gap-6 p-4 md:p-0;
+
+    &>div:nth-child(1) {
+      @apply flex justify-center md:justify-start w-32 aspect-square object-cover overflow-hidden rounded-full relative;
+
+      &>img {
+        @apply object-cover object-center;
+      }
+
+      &>div:nth-child(1) {
+        @apply mb-5;
+      }
+
+      &>div:nth-child(2) {
+        @apply mt-2 font-semibold;
+      }
+    }
+
+    &>div:nth-child(2) {
+      @apply flex flex-col justify-center;
+
+      &>div:nth-child(1) {
+        @apply flex text-lg;
+      }
+
+      &>div:nth-child(2) {
+        @apply px-5 mt-2.5 text-[#555555];
+      }
+    }
+  }
+}

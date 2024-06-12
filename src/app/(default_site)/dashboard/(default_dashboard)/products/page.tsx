@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 import { defaultParams } from '@/data/constants';
-import ProductsFeature from '@/features/products';
+import ProductsFeature from '@/features/dashboard/products';
 import { getProducts, queries } from '@/services/cms/products';
 
 interface Props {

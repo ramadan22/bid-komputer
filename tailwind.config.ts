@@ -51,6 +51,9 @@ const config: Config = {
       fontFamily: {
         sen: ['Sen', 'sans'],
       },
+      screens: {
+        xs: '360px',
+      },
     }
   },
   plugins: [

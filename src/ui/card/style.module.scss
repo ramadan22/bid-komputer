@@ -1,0 +1,12 @@
+.boxCard {
+  box-shadow: 0 30px 30px -25px rgba(#4133B7, .25);
+  @apply max-w-sm border border-gray-200 rounded-lg flex flex-col h-full xs:bg-red-200 sm:bg-white;
+
+  // &:hover {
+  //   box-shadow: rgba(0, 0, 0, 0.32) 0px 3px 6px, rgba(0, 0, 0, 0.46) 0px 3px 6px;
+  // };
+
+  & > Link > img {
+    @apply w-full aspect-square rounded-t-lg
+  };
+}

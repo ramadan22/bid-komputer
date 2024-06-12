@@ -29,6 +29,18 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'static.vecteezy.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'awsimages.detik.net.id',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.lovepik.com',
+      },
     ],
   },
 };
